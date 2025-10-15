@@ -1,4 +1,4 @@
-import { ref, computed, onMounted, watch, nextTick } from 'vue'
+import { ref, computed, onMounted, onUnmounted, watch, nextTick } from 'vue'
 import { useStore } from 'vuex'
 import { useRouter } from 'vue-router'
 import { useI18n } from 'vue-i18n'
@@ -94,6 +94,16 @@ export default {
       initMap()
     })
 
+    onUnmounted(() => {
+      // Clean up Leaflet map
+      if (map.value) {
+        map.value.remove()
+        map.value = null
+      }
+      leafletMarkers.value = {}
+      markersLayer.value = null
+    })
+
     // Watch for markers to load and add them to map
     watch(markers, (newMarkers) => {
       syncMapMarkers(newMarkers)
@@ -101,6 +111,9 @@ export default {
     }, { deep: true, immediate: true })
 
     const initMap = () => {
+      // Prevent reinitializing if map already exists
+      if (map.value) return
+
       map.value = L.map('map').setView(MAP_CONFIG.DEFAULT_CENTER, MAP_CONFIG.DEFAULT_ZOOM)
 
       L.tileLayer(MAP_CONFIG.TILE_LAYER_URL, {
