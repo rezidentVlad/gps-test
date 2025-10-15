@@ -1,0 +1,26 @@
+{
+  "nav": {
+    "about": "About Task",
+    "map": "Map"
+  },
+  "map": {
+    "title": "Markers Map",
+    "addMarker": "Add Marker",
+    "cancel": "Cancel",
+    "addingMode": "Click on map or search address",
+    "markersList": "Markers List",
+    "noMarkers": "No markers",
+    "removeMarker": "Remove marker",
+    "searchAddress": "Search Address",
+    "searchPlaceholder": "Enter address and press Enter"
+  },
+  "errors": {
+    "addressNotFound": "Address not found",
+    "failedToGetAddress": "Failed to get address for this location",
+    "locationNotFound": "Location not found",
+    "failedToFindLocation": "Failed to find location"
+  },
+  "about": {
+    "title": "SquareGPS Test Assignment"
+  }
+}

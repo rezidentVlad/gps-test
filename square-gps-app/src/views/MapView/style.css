@@ -1,0 +1,55 @@
+.map-container {
+  height: calc(100vh - 64px);
+  overflow: hidden;
+}
+
+.map-col,
+.list-col {
+  height: 100%;
+}
+
+.map-wrapper {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.leaflet-map {
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+}
+
+.adding-alert {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  max-width: 500px;
+  width: 90%;
+}
+
+@media (max-width: 960px) {
+  .map-container {
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .map-col {
+    height: 50vh;
+    min-height: 300px;
+  }
+
+  .list-col {
+    height: 50vh;
+    min-height: 300px;
+  }
+
+  .adding-alert {
+    max-width: calc(100% - 20px);
+    width: calc(100% - 20px);
+    font-size: 0.875rem;
+    padding: 8px 12px;
+  }
+}
