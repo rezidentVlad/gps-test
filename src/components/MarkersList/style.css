@@ -1,0 +1,52 @@
+.markers-list {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  max-height: 100%;
+}
+
+.markers-list .v-card-text {
+  overflow-y: auto !important;
+  overflow-x: hidden;
+  flex: 1 1 0;
+  min-height: 0;
+  -webkit-overflow-scrolling: touch;
+  position: relative;
+}
+
+.markers-scroll {
+  height: 100%;
+}
+
+.selected-marker {
+  background-color: rgba(25, 118, 210, 0.1);
+}
+
+.v-list-item:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+  cursor: pointer;
+}
+
+.search-results {
+  max-height: 300px;
+  overflow-y: auto !important;
+  overflow-x: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.search-result-item {
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.search-result-item:hover {
+  background-color: rgba(25, 118, 210, 0.08);
+}
+
+@media (max-width: 960px) {
+  .search-results {
+    max-height: 200px;
+  }
+}
