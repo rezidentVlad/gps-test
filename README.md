@@ -1,3 +1,3 @@
-# SquareGPS Test Assignment
+# Test
 
 Приложение для работы с маркерами на карте, разработанное на Vue.js 3 с использованием Vuex, Vue Router и Vuetify.
